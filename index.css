@@ -1,0 +1,21 @@
+.header{
+    display:flex;
+    justify-content:space-between;
+    border: 1px solid orange;
+}
+.logo{
+    width:200px;
+}
+.nav-items{
+
+}
+.nav-items > ul{
+    display:flex;
+    list-style-type: none;
+    padding: 0px 20px;
+    font-size: 26px;
+}
+.nav-items >ul > li{
+    padding:10px;
+    margin: 10px;
+}
