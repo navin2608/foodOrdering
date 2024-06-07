@@ -43,3 +43,13 @@
 .filter-btn{
     margin:10px;
 }
+.shimmer-cards{
+    margin:5px;
+    height:300px;
+    padding:5px;
+    width:200px;
+    background-color: #0f0f0f0f;
+}
+.shimmer-container{
+    display:flex;
+}
