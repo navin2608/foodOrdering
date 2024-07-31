@@ -3,6 +3,7 @@ import resObj from "../../utils/mockData";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { async } from "regenerator-runtime";
+import {Link} from "react-router-dom";
 import Shimmer from "./Shimmer";
 const Body=()=>{
     const [listOfRestaurants,setListOfRestaurant]=useState([]);
@@ -18,6 +19,7 @@ const Body=()=>{
         const json=await data.json();
         console.log(json);
         setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        console.log(listOfRestaurants);
         setFilterRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
        
     }
@@ -48,7 +50,8 @@ const Body=()=>{
             </div>
             <div className="res-container">
                 {
-                    filterRestaurants.map(value=><RestaurantCard key={value.info.id} respData={value} />)
+                 filterRestaurants.map(value=><Link to={`restaurants/${value.info.id}`}>
+                     <RestaurantCard key={value.info.id} respData={value} />  </Link> )
                 }
                 {/* <RestaurantCard respData={resObj[0]} />
                 <RestaurantCard respData={resObj[1]} />

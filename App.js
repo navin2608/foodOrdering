@@ -5,12 +5,13 @@ import Body from "./src/components/Body";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 import About from "./src/components/About";
 import Error from "./src/components/Error";
+ import RestaurantMenu from "./src/components/RestaurantMenu";
+
 const AppLayout=()=>{
     return (
         <div className="app">          
             <Header />
-            <Outlet />
-            
+            <Outlet />           
         </div>
     )
 }
@@ -24,6 +25,10 @@ const appRouter=createBrowserRouter([
     },
         {path:"/about",
         element:<About/>
+        },
+        {
+            path:"/restaurants/:resId",
+             element:<RestaurantMenu/>
         }
     ],
     errorElement:<Error />
