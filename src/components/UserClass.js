@@ -6,8 +6,17 @@ class UserClass extends React.Component{
         this.state={
             count:0
         }
+        
     }
-    
+    componentDidMount(){
+        console.log("component did mount");
+    }
+    componentDidUpdate(){
+        console.log("ComponentDidUpdate")
+    }
+    componentWillUnmount(){
+        console.log("ComponentWillUnmount")
+    }
     render(){
         return (
             <div className="user-card">
