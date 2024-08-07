@@ -6,7 +6,6 @@ import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 import About from "./src/components/About";
 import Error from "./src/components/Error";
  import RestaurantMenu from "./src/components/RestaurantMenu";
-
 const AppLayout=()=>{
     return (
         <div className="app">          

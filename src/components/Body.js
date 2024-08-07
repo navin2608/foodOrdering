@@ -5,11 +5,11 @@ import { useState } from "react";
 import { async } from "regenerator-runtime";
 import {Link} from "react-router-dom";
 import Shimmer from "./Shimmer";
+import useOnlineState from "../../utils/useOnlineState";
 const Body=()=>{
     const [listOfRestaurants,setListOfRestaurant]=useState([]);
     const [filterRestaurants,setFilterRestaurants]=useState([]);
-    const [searchText,setSearchText]=useState("");
-    
+    const [searchText,setSearchText]=useState("");    
     console.log("body rendered")
     useEffect(()=>{
        fetchData();
@@ -20,8 +20,13 @@ const Body=()=>{
         console.log(json);
         setListOfRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         console.log(listOfRestaurants);
-        setFilterRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-       
+        setFilterRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);       
+    }
+    const onlineState=useOnlineState();
+    if(!onlineState){
+        return (
+            <h1> You are in Offline mode now</h1>
+        )
     }
     //conditional Rendering
     return listOfRestaurants.length===0?<Shimmer/>:
