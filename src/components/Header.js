@@ -5,6 +5,7 @@ import useOnlineState from "../../utils/useOnlineState";
 const Header=()=>{
     const [btnNameReact,setBtnNameReact]=useState("Login")
     const  onlineState=useOnlineState();
+
     return (
         <div className="header">
         <div className="logo-container">
@@ -20,7 +21,8 @@ const Header=()=>{
                 <li >
                     <Link to="/about">About Us</Link>
                         </li>
-                <li> Contact Us</li>
+                <li> 
+                    <Link to="/contactus">Contact Us</Link></li>
                 <li> Cart</li>
                 <button className="login" onClick={()=>
                 btnNameReact==="Login"?setBtnNameReact("Logout"):setBtnNameReact("Login")}>{btnNameReact}</button>
