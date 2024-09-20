@@ -33,11 +33,11 @@ const Body=()=>{
    (
         <div className="body">
             <div className="filter">
-                <div className="search">
-                    <input type="text" className="search-box" value={searchText} onChange={(e)=>
+                <div className="search m-4 p-4 items-center">
+                    <input type="text" className="search-box border border-current" value={searchText} onChange={(e)=>
                     setSearchText(e.target.value)
                     }/>
-                    <button onClick={()=>{
+                    <button className="px-4 py-2 bg-orange-100 m-4 rounded-md" onClick={()=>{
                        
                          const filteredSearch=listOfRestaurants.filter(data=>data.info.name.toLowerCase().includes(searchText.toLowerCase())).length>0?listOfRestaurants.filter(data=>data.info.name.toLowerCase().includes(searchText.toLowerCase())):listOfRestaurants;
                        
@@ -45,13 +45,15 @@ const Body=()=>{
                         
                         //Fitler the restaurant cards & update the UI
                     }}>Search</button>
-                </div>
-                <button className="filter-btn" onClick={()=>{
+                    <button className="filter-btn flex px-4 bg-orange-300" onClick={()=>{
                     const filteredList=listOfRestaurants.filter(data=>data.info.avgRating>4.4)
                     console.log(listOfRestaurants)
                     setListOfRestaurant(filteredList);
                 }
             }>Top Rated Restaurant</button>
+                
+                </div>
+               
             </div>
             <div className="res-container">
                 {

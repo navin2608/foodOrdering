@@ -1,4 +1,6 @@
+
 const User=({name})=>{
+use
     console.log(name);
     return (
         <div className="user-card">
