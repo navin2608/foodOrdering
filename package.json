@@ -6,6 +6,7 @@
     "process": "^0.11.10",
     "tailwindcss": "^3.4.8"
   },
+  "homepage":"https://navin2608.github.io/foodOrdering/",
   "name": "food-ordering",
   "version": "1.0.0",
   "description": "food ordering app using react",
@@ -45,6 +46,7 @@
     "escape-string-regexp": "^1.0.5",
     "fill-range": "^7.0.1",
     "get-port": "^4.2.0",
+    "gh-pages": "^6.3.0",
     "globals": "^13.24.0",
     "has-flag": "^4.0.0",
     "htmlnano": "^2.1.1",
@@ -107,8 +109,10 @@
   },
   "scripts": {
     "test": "jest",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "start": "parcel index.html",
-    "build": "parce build index.html"
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -126,6 +130,5 @@
   },
   "browswersList": [
     " last 2 versions"
-  ],
-  "homepage": "https://github.com/navin2608/foodOrdering#readme"
+  ]
 }
